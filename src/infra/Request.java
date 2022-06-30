@@ -17,7 +17,7 @@ public class Request {
     }
 
     public boolean isValidRequest(){
-        return false;
+        return uriParser.isValid();
     }
 
     public Object getParameterValue(String key, Class cls){

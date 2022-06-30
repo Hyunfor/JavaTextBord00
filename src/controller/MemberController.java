@@ -92,7 +92,7 @@ public class MemberController implements Controller{
 
                 // loginId
         String logonMember = request.getLogonMember();
-        System.out.println("로그아웃 되었습니다. " + logonMember + "님 안녕히가세요. ");
+        System.out.println("로그아웃 되었습니다. " + logonMember + "님 안녕히 가세요. ");
 
         request.logout();
 

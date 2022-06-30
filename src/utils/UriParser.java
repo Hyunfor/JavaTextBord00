@@ -29,6 +29,11 @@ public class UriParser {
     private void parse() {
         // /system/exit
 
+        if(!this.URI.startsWith("/")){
+            this.isValid = false;
+            return;
+        }
+
         // "?"
         String[] uriSplite = this.URI.split("\\?", 2);
         // articles/detail?id=1&title=???&body=??
@@ -47,6 +52,12 @@ public class UriParser {
         // /articles / detail
         // naver.com/members/join
         String[] uriBodySplit = uriSplite[0].split("/");
+
+        if(uriBodySplit.length != 3){
+            this.isValid = false;
+            return;
+        }
+
         // [, articles, detail]
         this.controllerCode = uriBodySplit[1];  //system
         this.target = uriBodySplit[2]; // exit
@@ -71,4 +82,7 @@ public class UriParser {
         return URI;
     }
 
+    public boolean isValid() {
+        return isValid;
+    }
 }
